@@ -1,0 +1,15 @@
+ul {
+  list-style: none;
+}
+
+ul label {
+  width: 150px;
+  height: 20px;
+  display: inline-block;
+}
+
+input [type="text"] {
+  width: 80%;
+  height: 20px;
+}
+/*# sourceMappingURL=stilos.css.map */
