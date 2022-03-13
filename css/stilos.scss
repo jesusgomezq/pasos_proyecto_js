@@ -11,12 +11,11 @@ ul label {
   width: $ancho;
   height: $alto;
   display: inline-block;
-    
 }
 
 input [type="text"] {
   width: $anchoInputi;
   height: $altoInput;
+  border: none;
+  background: none;
 }
-
-
