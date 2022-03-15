@@ -8,7 +8,6 @@
     <title>Fomulario</title>
   </head>
   <body>
-    <div id="mensaje"></div>
     <form action="#" class="" id="reservas" method="post">
       <ul>
         <li>
@@ -17,18 +16,37 @@
             type="text"
             id="nombre"
             placeholder="Nombre completo"
+            oninvalid="invalido()"
             required
           />
         </li>
 
         <li>
           <label for="documento">Documento</label>
-          <input type="text" id="documento" placeholder="Documento" required />
+          <input
+            type="text"
+            id="documento"
+            placeholder="Documento"
+            oninvalid="invalido()"
+            required
+          />
+        </li>
+
+        <li>
+          <label for="mail">Correo </label>
+          <input
+            type="email"
+            id="mail"
+            placeholder="Correo electronico"
+            oninvalid="invalido()"
+            required
+          />
         </li>
 
         <li>
           <label for="hotel">Selecione un hotel</label>
-          <select name="" id="hotel" required>
+          <select name="" id="hotel" oninvalid="invalido()" required>
+            <option value="" disabled selected>Seleccione un hotel</option>
             <option value="">Hotel Ecoland</option>
             <option value="">Hotel Costa caribe</option>
             <option value="">Hotel Isla caribe</option>
@@ -38,23 +56,24 @@
 
         <li>
           <label for="checkin">Check-in </label>
-          <input type="date" id="checkin" required />
+          <input type="date" id="checkin" oninvalid="invalido()" required />
         </li>
 
         <li>
           <label for="checkout">Check-out</label>
-          <input type="date" id="checkout" required />
+          <input type="date" id="checkout" oninvalid="invalido()" required />
         </li>
 
         <li>
           <label for="personas">Numero de perosonas</label>
-          <input type="number" id="personas" required />
+          <input type="number" id="personas" oninvalid="invalido()" required />
         </li>
 
         <li>
           <button id="enviar" type="submit" onclick="captarDatos()">
             Reservar
           </button>
+          <div id="mensaje"></div>
         </li>
       </ul>
     </form>
