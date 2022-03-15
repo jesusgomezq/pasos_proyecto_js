@@ -56,12 +56,24 @@
 
         <li>
           <label for="checkin">Check-in </label>
-          <input type="date" id="checkin" oninvalid="invalido()" required />
+          <input
+            value="1"
+            type="date"
+            id="checkin"
+            oninvalid="invalido()"
+            required
+          />
         </li>
 
         <li>
           <label for="checkout">Check-out</label>
-          <input type="date" id="checkout" oninvalid="invalido()" required />
+          <input
+            value="2"
+            type="date"
+            id="checkout"
+            oninvalid="invalido()"
+            required
+          />
         </li>
 
         <li>
@@ -70,9 +82,7 @@
         </li>
 
         <li>
-          <button id="enviar" type="submit" onclick="captarDatos()">
-            Reservar
-          </button>
+          <button id="enviar" type="submit">Reservar</button>
           <div id="mensaje"></div>
         </li>
       </ul>

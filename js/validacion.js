@@ -35,6 +35,7 @@
 //   alert(datos);
 // }
 
+// validando el boton
 let formulario = document.getElementById("reservas");
 let btn_reservar = document.getElementById("enviar");
 let mensaje = document.getElementById("mensaje");
@@ -50,6 +51,7 @@ formulario.addEventListener("submit", function (event) {
   mensaje.style.color = "green";
 });
 
+// manejando el dom
 let nombre = document.getElementById("nombre").value;
 let documento = document.getElementById("documento").value;
 let mail = document.getElementById("mail").value;
@@ -58,12 +60,12 @@ let checkin = document.getElementById("checkin").value;
 let checkout = document.getElementById("checkout").value;
 let personas = document.getElementById("personas").value;
 
-mensaje.addEventListener("submit", function () {
-  // event.preventDefault();
+checkout.addEventListener("change", function () {
   if (checkout.value <= checkin.value) {
     mensaje.innerHTML =
-      "<p>La fecha de salida no debe ser igual a la de ingreso";
+      "<p>La fecha de salida no puede ser igual a la de ingreso";
     mensaje.style.color = "red";
   } else {
+    mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
   }
 });
