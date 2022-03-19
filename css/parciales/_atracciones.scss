@@ -1,0 +1,56 @@
+@import "./variables";
+.atracciones {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    text-align: center;
+    margin-bottom: 50px;
+    color: $colorPrincipal;
+    font-size: 3rem;
+    margin-top: 20px;
+  }
+
+  &__contenedor {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__contenedor div {
+    width: 25%;
+  }
+
+  &__contenedor &__imagen {
+    width: 100%;
+    text-align: center;
+  }
+  &__contenedor div img {
+    max-width: 100%;
+    min-width: 100%;
+    max-height: 250px;
+    min-height: 250px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  &__contenedor h3 {
+    text-align: center;
+    font-size: 2rem;
+    color: $colorPrincipal;
+    margin: 10px 0 25px 0;
+  }
+
+  &__parrafo {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    padding: 0 10px 10px 10px;
+    margin-bottom: 25px;
+    height: 150px;
+  }
+
+  &__btn {
+    width: 100% !important;
+    text-align: center;
+  }
+}

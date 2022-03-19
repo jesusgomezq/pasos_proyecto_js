@@ -1,0 +1,30 @@
+@import "./variables";
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__logo {
+    margin: auto 15px;
+    max-height: 100px;
+    margin-bottom: 20px;
+  }
+  &__list {
+    display: flex;
+    align-items: baseline;
+  }
+  &__item {
+    margin: 0 10px;
+    list-style-type: none;
+  }
+  &__link {
+    text-decoration: none;
+    font-size: 1.5rem;
+    color: $colorPrincipal;
+    font-weight: bold;
+  }
+  &__link:hover {
+    border-bottom: 2px solid $colorSecundario;
+  }
+}

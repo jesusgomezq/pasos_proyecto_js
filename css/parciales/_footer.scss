@@ -1,0 +1,22 @@
+@import "./variables";
+
+.foot {
+  padding: 40px 20px;
+  background-color: $colorFondo;
+  & &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__list &__item {
+    list-style: none;
+  }
+  &__link {
+    text-decoration: none;
+    margin: 0px 10px;
+    color: $colorPrincipal;
+    font-size: 1.1rem;
+    font-weight: bolder;
+    font-weight: bolder;
+  }
+}

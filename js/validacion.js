@@ -1,40 +1,3 @@
-// let reservas = document.getElementById(
-//   "reservas",
-//   "nombre",
-//   "docuemtno",
-//   "hotel",
-//   "checkin",
-//   "mensaje"
-// );
-
-// reservas.addEventListener("submit", function (event) {
-//   console.log("Dentro");
-//   event.preventDefault();
-// });
-
-// let checkin = document.getElementById("checkin");
-// let checkout = document.getElementById("checkout");
-// let mensaje = document.getElementById("mensaje");
-// let correto = false;
-
-// checkout.addEventListener("submit", function (event) {
-//   //   console.log(checkout);
-//   if (checkout.value <= checkin.value) {
-//     event.preventDefault();
-//     mensaje.innerHTML = "<p>elige otra fecha de CKECKOUT</p>";
-//     mensaje.style.color = "red";
-//   } else {
-//     mensaje.innerHTML = "<p> Bienvenido come pinga</p>";
-//     mensaje.style.color = "green";
-//   }
-// });
-
-// // // captura de datos de formulario
-// function captarDatos() {
-//   let datos = document.getElementById("nombre").value;
-//   alert(datos);
-// }
-
 // validando el boton
 let formulario = document.getElementById("reservas");
 let btn_reservar = document.getElementById("enviar");
@@ -47,31 +10,14 @@ function invalido() {
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
-  let chckout = document.getElementById("checkout");
   if (checkout.value <= checkin.value) {
-    alert("no puedes");
+    mensaje.innerHTML =
+      "<p>La fecha de salida no puede ser igual a la de entrada</p>";
+    mensaje.style.color = "red";
   } else {
     mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
     mensaje.style.color = "green";
   }
 });
 
-// manejando el dom
-let nombre = document.getElementById("nombre").value;
-let documento = document.getElementById("documento").value;
-let mail = document.getElementById("mail").value;
-let hotel = document.getElementById("hotel").value;
-let checkin = document.getElementById("checkin").value;
-let checkout = document.getElementById("checkout").value;
-let personas = document.getElementById("personas").value;
 
-// checkout.addEventListener("change", (event) => {
-//   if (checkout.target.value == checkin.value) {
-//     event.preventDefault();
-//     mensaje.innerHTML =
-//       "<p>La fecha de salida no puede ser igual a la de ingreso";
-//     mensaje.style.color = "red";
-//   } else {
-//     mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
-//   }
-// });

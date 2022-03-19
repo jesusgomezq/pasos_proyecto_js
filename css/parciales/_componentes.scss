@@ -1,0 +1,32 @@
+@import "./variables";
+
+.btn {
+  font-size: 1.25rem;
+  background-color: $colorPrincipal;
+  border: none;
+  color: $colorTerciario;
+  padding: 15px 30px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn--principal:hover {
+  background-color: $colorSecundario;
+}
+
+.btn--footer:hover {
+  background-color: $colorSecundario;
+}
+
+.btn--atracciones:hover {
+  background-color: $colorSecundario;
+}
+
+.btn {
+  font-size: 1.25rem;
+  background-color: $colorPrincipal;
+  border: none;
+  color: $colorTerciario;
+  padding: 15px 30px;
+  cursor: pointer;
+}

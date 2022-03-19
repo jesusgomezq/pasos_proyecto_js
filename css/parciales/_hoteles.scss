@@ -1,0 +1,170 @@
+@import "./variables";
+
+.contenedor__hoteles {
+  width: 90vw;
+  margin: 0 auto;
+}
+
+.titulo--hoteles {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: 400;
+  padding: 9px 0;
+  color: $colorPrincipal;
+}
+
+.contenedor__galeria {
+  width: 100%;
+  // height: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  padding: 20px;
+  grid-gap: 10px;
+  & .galeria__contenedor {
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // overflow: hidden;
+    border-radius: 7px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  & .contenedor__imagen {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+  }
+  & .contenedor__imagen .galeria__img {
+    width: 100%;
+    // min-height: 250px;
+    // max-height: 250px;
+    transition: all 500ms ease-out;
+  }
+  & .contenedor__imagen .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 250px;
+    background: rgba(0, 103, 123, 0.5);
+    visibility: hidden;
+    text-align: center;
+  }
+  & .contenedor__imagen:hover > .capa {
+    // opacity: 1;
+    visibility: visible;
+  }
+  & .contenedor__imagen:hover > .capa .galeria__titulo {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  & .galeria__contenedor .capa .galeria__titulo {
+    color: $colorPrincipal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    transition: all 500ms ease-out;
+    margin-top: 130px;
+    padding-bottom: 30px;
+  }
+
+  & .galeria__texto {
+    margin-top: 20px auto;
+    padding: 20px;
+    // overflow: initial;
+    height: auto;
+  }
+
+  & .contenedor__imagen:hover > .galeria__img {
+    transform: scale(1.1);
+  }
+}
+
+.galeria__link {
+  color: $colorPrincipal;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 10px 10px;
+  border: 3px solid $colorSecundario;
+  opacity: 0.9;
+  &:hover {
+    background-color: rgba(233, 234, 239, 0.7);
+  }
+}
+
+.galeria__img {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 1024px) {
+  .contenedor__galeria {
+    grid-template-columns: 1fr;
+    padding: 20px;
+  }
+
+  .capa {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .titulo--hoteles {
+    font-size: 2rem;
+  }
+
+  .contenedor__hoteles {
+    width: 100%;
+  }
+
+  .foot {
+    width: 100%;
+    display: flex;
+    & .foot__list {
+      flex-direction: row;
+    }
+  }
+
+  .foot__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  & .galeria__contenedor:hover > .capa .galeria__titulo {
+    display: none;
+  }
+
+  .conedor__galeria .galeria__contenedor:hover > .capa {
+    display: none;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  & .galeria__contenedor .capa .galeria__titulo {
+    display: none;
+    color: $colorPrincipal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    margin-bottom: 150px;
+    transition: all 500ms ease-out;
+    margin-top: 130px;
+    padding-bottom: 30px;
+  }
+
+  & .galeria__contenedor:hover > .capa .galeria__titulo {
+    display: none;
+    margin-top: 110px;
+    margin-bottom: 10px;
+  }
+  & .galeria__contenedor .capa {
+    display: none;
+  }
+}

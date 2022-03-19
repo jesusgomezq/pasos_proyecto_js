@@ -1,0 +1,24 @@
+@import "./variables";
+
+.section {
+  width: 100%;
+  background-image: url(../asset/header_isla.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 500px;
+  margin: 0 auto;
+  padding: 100px;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  &__contenedor {
+    width: 50%;
+    font-size: 3rem;
+    color: $colorTerciario;
+  }
+  &__contenedor h1 {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+}

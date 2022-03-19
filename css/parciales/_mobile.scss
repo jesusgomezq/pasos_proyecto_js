@@ -1,0 +1,216 @@
+@import "./variables";
+
+@media only screen and (max-width: 1400px) {
+  .sectionMain {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .sectionMain iframe {
+    width: 100%;
+  }
+
+  .sectionMain div h2 {
+    margin-bottom: 25px;
+  }
+
+  .atracciones__contenedor div {
+    width: 50%;
+  }
+
+  .atracciones__contenedor h3 {
+    font-size: 2rem;
+  }
+
+  .atracciones__contenedor .atracciones__imagen {
+    width: 75%;
+    margin: 0 auto;
+  }
+
+  .atracciones__parrafo {
+    height: 125px;
+    margin-bottom: 0;
+  }
+
+  .atracciones__btn {
+    margin-bottom: 50px;
+  }
+
+  .contneedor__hotles {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .header {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    &__nav {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    &__list {
+      display: flex;
+      justify-content: center;
+    }
+  }
+  & a {
+    text-align: center;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .header {
+    width: 100%;
+    display: flex;
+    margin-bottom: 10px;
+    justify-content: center;
+    align-items: center;
+    a &__logo {
+      width: 50%;
+    }
+    &__nav {
+      width: 100%;
+      display: flex;
+    }
+    &__nav &__list {
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+    &__item {
+      margin: 0 5px;
+    }
+    &__link {
+      font-size: 1.1rem;
+    }
+    & a {
+      text-align: center;
+    }
+  }
+
+  .section {
+    padding: 0;
+    text-align: center;
+    &__contenedor {
+      width: 100%;
+      font-size: 2rem;
+      padding: 10px;
+    }
+    &__contenedor h1 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .btn {
+    font-size: 1.25rem;
+    background-color: $colorPrincipal;
+    border: none;
+    color: $colorTerciario;
+    padding: 15px 30px;
+    cursor: pointer;
+  }
+
+  .atracciones__contenedor div {
+    width: 100%;
+  }
+
+  .atracciones__parrafo {
+    height: auto;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .header {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header__logo {
+    width: 30%;
+    margin: 0 auto;
+  }
+
+  .header__nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .header__list {
+    width: 100%;
+    flex-direction: column;
+  }
+
+  .header__item {
+    margin: 1px auto;
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  .header__link {
+    font-size: 1rem;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+
+  .section {
+    display: flex;
+    background-image: url(../asset/header_isla.jpg);
+    width: 100%;
+    margin-top: 10px;
+    overflow: hidden;
+  }
+
+  .sectionMain__contenedor .sectionMain_video {
+    width: 100%;
+  }
+
+  .btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60%;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    overflow: hidden;
+  }
+
+  .atracciones--dunes,
+  .atracciones--mall,
+  .atracciones--playas,
+  .atracciones--castillos {
+    width: 100%;
+  }
+
+  .slider__contenedor {
+    display: none;
+  }
+
+  .slider__contenedor--2 {
+    display: initial;
+    width: 50%;
+    overflow: hidden;
+  }
+
+  .foot {
+    width: 100%;
+    display: flex;
+  }
+
+  .foot__footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .foot .foot__list {
+    flex-direction: row;
+  }
+}

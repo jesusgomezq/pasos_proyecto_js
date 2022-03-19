@@ -1,0 +1,112 @@
+@import "./variables";
+
+.titulo--tours {
+  text-align: center;
+  font-size: 3rem;
+  font-weight: bold;
+  padding: 9px 0;
+  color: $colorPrincipal;
+}
+
+.main__contenedor {
+  width: 90vw;
+  margin: 0 auto;
+  border-radius: 5px;
+  & .galeria__imagen .galeria__img {
+    width: 100%;
+    height: 330px;
+    transition: all 500ms ease-out;
+  }
+  & .galeria__imagen .capa {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 300px;
+    background: rgba(0, 103, 123, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    text-align: center;
+  }
+  & .galeria__imagen:hover > .capa {
+    opacity: 1;
+    visibility: visible;
+  }
+  & .galeria__imagen:hover > .capa .galeria__titulo {
+    margin-top: 40px;
+    margin-bottom: 10px;
+  }
+  & .galeria__imagen:hover > .galeria__img {
+    transform: scale(1.1);
+  }
+  & .galeria__imagen .capa .galeria__titulo {
+    color: $colorPrincipal;
+    font-weight: bold;
+    font-size: 2.5rem;
+    transition: all 500ms ease-out;
+    margin-top: 130px;
+    padding-bottom: 30px;
+  }
+  & .excursiones__texto {
+    margin-top: 20px auto;
+    padding: 20px;
+  }
+}
+.main__galeria {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: auto;
+  padding: 20px;
+  grid-gap: 10px;
+  & .galeria__contenedor {
+    height: auto;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 7px;
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+    overflow: hidden;
+  }
+  & .galeria__imagen {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+  }
+}
+
+.galeria__link {
+  color: $colorPrincipal;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 10px 10px;
+  border: 3px solid $colorSecundario;
+  border-radius: 5px;
+  opacity: 0.9;
+  &:hover {
+    background-color: rgba(233, 234, 239, 0.7);
+  }
+}
+
+.galeria__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media only screen and (max-width: 1024px) {
+  .main__galeria {
+    grid-template-columns: 1fr;
+  }
+
+  .galeria__imagen {
+    margin-bottom: 40px;
+  }
+
+  .titulo--tours {
+    font-size: 2.25rem;
+    margin-top: 50px;
+  }
+}

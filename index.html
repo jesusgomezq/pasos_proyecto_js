@@ -5,89 +5,157 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/stilos.css" />
-    <title>Fomulario</title>
+    <title>Document</title>
   </head>
   <body>
-    <form action="#" class="" id="reservas" method="post">
-      <ul>
-        <li>
-          <label for="nombre">Nombre completo</label>
-          <input
-            type="text"
-            id="nombre"
-            placeholder="Nombre completo"
-            oninvalid="invalido()"
-            required
-          />
-        </li>
+    <main class="contenedor__hoteles">
+      <h1 class="titulo--hoteles">Nuestros Hoteles</h1>
+      <section class="contenedor__galeria">
+        <div class="galeria__contenedor">
+          <div class="contenedor__imagen">
+            <img
+              src="../asset/dunes_galeria.jpg"
+              alt="hotel dunes margarita"
+              class="galeria__img"
+            />
+            <div class="capa">
+              <h2 class="galeria__titulo">Ecoland</h2>
+              <a class="galeria__link" href="../reserva/reserva.html"
+                >Reserva aqui</a
+              >
+            </div>
+          </div>
+          <div class="galeria__texto">
+            <p>
+              Resort incluido, situado a 4 minutos de la playa Puerto Cruz. Las
+              habitaciones son sencillas, vistas al jardín. Las suites incluyen
+              salas de estar y cocinas. Servicio de habitaciones 24 horas. Los
+              niños menores de 6 años se alojan gratis. El resort tiene 3 bares
+              y 4 restaurantes. Hay 4 piscinas, pistas de tenis, gimnasio, sauna
+              y baño de vapor. Además, el resort incluye aparcamiento, parque
+              infantil, y discoteca.
+            </p>
+            <p>
+              Entrada: 15:00 <br />
+              Salida: 13:00
+            </p>
+            <p><strong>NOTA: No se admiten mascotas</strong></p>
+          </div>
+        </div>
+        <div class="galeria__contenedor">
+          <div class="contenedor__imagen">
+            <img
+              src="../asset/hesperia_galeria.jpg"
+              alt="hotel hesperia margarita"
+              class="galeria__img"
+            />
+            <div class="capa">
+              <h2 class="galeria__titulo">Hesperia</h2>
+              <a class="galeria__link" href="../reserva/reserva.html"
+                >Reserva aqui</a
+              >
+            </div>
+          </div>
+          <div class="galeria__texto">
+            <p>
+              Este complejo turístico, a 8 minutos de la playa Puerto Viejo y a
+              3 km de las playas Puerto Cruz. Habitaciones modernas, y ofrecen
+              minibar, caja fuerte, TV de pantalla plana y Wi-Fi. Las suites de
+              lujo incluyen sala de estar, y algunas tienen bañera con
+              hidromasaje. Servicio a la habitación. Desayuno. Piscina cubierta
+              y otra al aire libre, canchas de tenis, un campo de golf, un spa,
+              un gimnasio, un restaurante con terraza. Salon de belleza, tienda
+              y mucho más.
+            </p>
+            <p>
+              Entrada: 15:00 <br />
+              Salida: 12:00
+            </p>
+            <p><strong>NOTA: No se admiten mascotas</strong></p>
+          </div>
+        </div>
+        <div class="galeria__contenedor">
+          <div class="contenedor__imagen">
+            <img
+              src="../asset/isla-caribe_galeria.jpg"
+              alt="hotel isla caribe margarita"
+              class="galeria__img"
+            />
+            <div class="capa">
+              <h2 class="galeria__titulo">Sunsol</h2>
+              <!-- Button trigger modal -->
+              <a
+                type="submit"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
+                onclick="formulario()"
+              >
+                Reservar
+              </a>
 
-        <li>
-          <label for="documento">Documento</label>
-          <input
-            type="text"
-            id="documento"
-            placeholder="Documento"
-            oninvalid="invalido()"
-            required
-          />
-        </li>
-
-        <li>
-          <label for="mail">Correo </label>
-          <input
-            type="email"
-            id="mail"
-            placeholder="Correo electronico"
-            oninvalid="invalido()"
-            required
-          />
-        </li>
-
-        <li>
-          <label for="hotel">Selecione un hotel</label>
-          <select name="" id="hotel" oninvalid="invalido()" required>
-            <option value="" disabled selected>Seleccione un hotel</option>
-            <option value="">Hotel Ecoland</option>
-            <option value="">Hotel Costa caribe</option>
-            <option value="">Hotel Isla caribe</option>
-            <option value="">Hotel Coche paradise</option>
-          </select>
-        </li>
-
-        <li>
-          <label for="checkin">Check-in </label>
-          <input
-            value="checkin"
-            type="date"
-            id="checkin"
-            oninvalid="invalido()"
-            required
-          />
-        </li>
-
-        <li>
-          <label for="checkout">Check-out</label>
-          <input
-            value="checkout"
-            type="date"
-            id="checkout"
-            oninvalid="invalido()"
-            required
-          />
-        </li>
-
-        <li>
-          <label for="personas">Numero de perosonas</label>
-          <input type="number" id="personas" oninvalid="invalido()" required />
-        </li>
-
-        <li>
-          <button id="enviar" type="submit">Reservar</button>
-          <div id="mensaje"></div>
-        </li>
-      </ul>
-    </form>
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="staticBackdrop"
+                data-bs-backdrop="static"
+                data-bs-keyboard="false"
+                tabindex="-1"
+                aria-labelledby="staticBackdropLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="staticBackdropLabel">
+                        Modal title
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">...</div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button type="button" class="btn btn-primary">
+                        Understood
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="galeria__texto">
+            <p>
+              Este resort se encuentra frente a las blancas arenas de playa El
+              Tirano, a 11 del parque acuático Parque El Agua. Las habitaciones
+              y suites se reparten entre tres edificios, decoración tropical.
+              Algunas cuentan con terrazas o balcones, mientras que las
+              estancias superiores incluyen bañeras de hidromasaje o salas de
+              estar. El resort tiene 4 restaurantes y 6 bares, una discoteca y
+              un teatro. Sala de juegos, un parque infantil, un spa, piscinas.
+            </p>
+            <p>
+              Entrada: 15:00 <br />
+              Salida: 13:00
+            </p>
+            <p><strong>NOTA: No se admiten mascotas</strong></p>
+          </div>
+        </div>
+      </section>
+    </main>
 
     <script src="js/validacion.js"></script>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   </body>
 </html>
