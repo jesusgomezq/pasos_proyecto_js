@@ -20,9 +20,14 @@
             />
             <div class="capa">
               <h2 class="galeria__titulo">Ecoland</h2>
-              <a class="galeria__link" href="../reserva/reserva.html"
-                >Reserva aqui</a
+              <button
+                type="button"
+                class="galeria__link"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
               >
+                Reserva aqui
+              </button>
             </div>
           </div>
           <div class="galeria__texto">
@@ -51,9 +56,14 @@
             />
             <div class="capa">
               <h2 class="galeria__titulo">Hesperia</h2>
-              <a class="galeria__link" href="../reserva/reserva.html"
-                >Reserva aqui</a
+              <button
+                type="button"
+                class="galeria__link"
+                data-bs-toggle="modal"
+                data-bs-target="#staticBackdrop"
               >
+                Reserva aqui
+              </button>
             </div>
           </div>
           <div class="galeria__texto">
@@ -83,62 +93,14 @@
             />
             <div class="capa">
               <h2 class="galeria__titulo">Sunsol</h2>
-              <!-- Button trigger modal -->
               <button
                 type="button"
-                class="btn btn-primary"
+                class="galeria__link"
                 data-bs-toggle="modal"
-                data-bs-target="#exampleModal"
+                data-bs-target="#staticBackdrop"
               >
-                Reserver
+                Reserva aqui
               </button>
-
-              <!-- Modal -->
-              <div
-                class="modal fade"
-                id="exampleModal"
-                tabindex="-1"
-                aria-labelledby="exampleModalLabel"
-                aria-hidden="true"
-              >
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">
-                        Modal title
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <form action="#">
-                        <label for="checkin">Check-in </label>
-                        <input type="date" name="checkin" id="checkin" />
-                        <label for="checkout">Check-out </label>
-                        <input type="date" name="checkout" id="checkout" />
-                        <label for="personas">Cantidad de personas</label>
-                        <input type="number" nomber="personas" id="personas" />
-                      </form>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                      <button type="button" class="btn btn-primary">
-                        Save changes
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
             </div>
           </div>
           <div class="galeria__texto">
@@ -160,6 +122,93 @@
         </div>
       </section>
     </main>
+    <!-- Button trigger modal -->
+    <!-- <button
+      type="button"
+      class="btn btn-primary"
+      data-bs-toggle="modal"
+      data-bs-target="#staticBackdrop"
+      onclick="formulario()"
+    >
+      Reserva aqui
+    </button> -->
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="staticBackdrop"
+      data-bs-backdrop="static"
+      data-bs-keyboard="false"
+      tabindex="-1"
+      aria-labelledby="staticBackdropLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Reservar</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form action="#" method="post" id="reservas">
+              <div id="mensaje"></div>
+              <ul>
+                <li>
+                  <label for="checkin">Checkin</label>
+                  <input
+                    type="date"
+                    name=""
+                    id="checkin"
+                    oninvalid="invalido()"
+                    required
+                  />
+                </li>
+
+                <li>
+                  <label for="checkout">Checkout</label>
+                  <input
+                    type="date"
+                    name=""
+                    id="checkout"
+                    oninvalid="invalido()"
+                    required
+                  />
+                </li>
+
+                <li>
+                  <label for="personas">Personas</label>
+                  <input
+                    type="number"
+                    name=""
+                    id="personas"
+                    oninvalid="invalido()"
+                    required
+                  />
+                </li>
+
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Close
+                  </button>
+                  <button type="submit" class="btn btn-primary" id="enviar">
+                    Continuar
+                  </button>
+                </div>
+              </ul>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="../node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="js/validacion.js"></script>

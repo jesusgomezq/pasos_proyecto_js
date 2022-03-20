@@ -4,7 +4,7 @@ let btn_reservar = document.getElementById("enviar");
 let mensaje = document.getElementById("mensaje");
 
 function invalido() {
-  mensaje.innerHTML = "Debes completar todos los campos solicitados";
+  mensaje.innerText = "Debes completar todos los campos solicitados";
   mensaje.style.color = "red";
 }
 
@@ -19,5 +19,3 @@ formulario.addEventListener("submit", (event) => {
     mensaje.style.color = "green";
   }
 });
-
-

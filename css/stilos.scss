@@ -8,18 +8,15 @@ $alto: 20px;
 $anchoInputi: 80%;
 $altoInput: 20px;
 
-form {
-  margin-top: 20px;
-}
-ul {
+ul li {
   list-style: none;
-  margin-top: 20px;
 }
 
-ul label {
+label {
   width: $ancho;
   height: $alto;
   display: inline-block;
+  margin: 10px auto;
 }
 
 input [type="text"] {
@@ -27,4 +24,5 @@ input [type="text"] {
   height: $altoInput;
   border: none;
   background: none;
+  margin: 20px auto;
 }

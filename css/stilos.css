@@ -11979,15 +11979,6 @@ fieldset:disabled .btn {
   background-color: #3d9af3;
 }
 
-.btn {
-  font-size: 1.25rem;
-  background-color: #0e0253;
-  border: none;
-  color: white;
-  padding: 15px 30px;
-  cursor: pointer;
-}
-
 .contenedor__hoteles {
   width: 90vw;
   margin: 0 auto;
@@ -12178,19 +12169,15 @@ fieldset:disabled .btn {
   }
 }
 
-form {
-  margin-top: 20px;
-}
-
-ul {
+ul li {
   list-style: none;
-  margin-top: 20px;
 }
 
-ul label {
+label {
   width: 150px;
   height: 20px;
   display: inline-block;
+  margin: 10px auto;
 }
 
 input [type="text"] {
@@ -12198,5 +12185,6 @@ input [type="text"] {
   height: 20px;
   border: none;
   background: none;
+  margin: 20px auto;
 }
 /*# sourceMappingURL=stilos.css.map */
