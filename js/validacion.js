@@ -10,12 +10,19 @@ function invalido() {
 
 formulario.addEventListener("submit", (event) => {
   event.preventDefault();
+
+  let personas = parseInt(document.getElementById("personas").value);
+  let precioPorNoche = 3000;
+  let resultado = precioPorNoche * personas;
   if (checkout.value <= checkin.value) {
     mensaje.innerHTML =
       "<p>La fecha de salida no puede ser igual a la de entrada</p>";
     mensaje.style.color = "red";
+    resultado = personas * precioPorNoche * reservas.length;
   } else {
     mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
     mensaje.style.color = "green";
   }
+  formulario.reset();
+  alert(resultado, length);
 });
