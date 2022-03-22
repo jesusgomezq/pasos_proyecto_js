@@ -46,7 +46,11 @@ formulario.addEventListener("submit", (event) => {
   let cantidadDias = calcularCantidadDias(checkin, checkout);
 
   let total = cantidadPersonas * precioPornoche * cantidadDias;
-
+  Swal.fire(
+    "Reserva exitosa",
+    "Enviaremos un correo con el detalle!",
+    "success"
+  );
   alert(
     "Cantidad de personas: " +
       cantidadPersonas +
