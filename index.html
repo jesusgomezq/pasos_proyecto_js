@@ -16,7 +16,7 @@
     <main class="contenedor__hoteles">
       <h1 class="titulo--hoteles">Nuestros Hoteles</h1>
       <section class="contenedor__galeria">
-        <div class="galeria__contenedor">
+        <div id="hotel_1" class="galeria__contenedor">
           <div class="contenedor__imagen">
             <img
               src="../asset/dunes_galeria.jpg"
@@ -52,7 +52,7 @@
             <p><strong>NOTA: No se admiten mascotas</strong></p>
           </div>
         </div>
-        <div class="galeria__contenedor">
+        <div id="hotel_2" class="galeria__contenedor">
           <div class="contenedor__imagen">
             <img
               src="../asset/hesperia_galeria.jpg"
@@ -89,7 +89,7 @@
             <p><strong>NOTA: No se admiten mascotas</strong></p>
           </div>
         </div>
-        <div class="galeria__contenedor">
+        <div id="hotel_3" class="galeria__contenedor">
           <div class="contenedor__imagen">
             <img
               src="../asset/isla-caribe_galeria.jpg"
@@ -157,12 +157,24 @@
               class="btn-close"
               data-bs-dismiss="modal"
               aria-label="Close"
+              onclick="cerrar()"
             ></button>
           </div>
           <div class="modal-body">
             <form action="#" method="post" id="reservas">
               <div id="mensaje"></div>
               <ul>
+                <li>
+                  <label for="hotel">Escoge el hotel</label>
+                  <select name="hotel" id="hotel">
+                    <option value="" disabled selected>
+                      seleccione un hotel
+                    </option>
+                    <option value="ecoland">Hotel ecoland</option>
+                    <option value="hesperia">Hesperia</option>
+                    <option value="isla-caribe">Isla caribe</option>
+                  </select>
+                </li>
                 <li>
                   <label for="checkin">Checkin</label>
                   <input
@@ -201,6 +213,7 @@
                     type="button"
                     class="btn btn-secondary"
                     data-bs-dismiss="modal"
+                    onclick="cerrar()"
                   >
                     Close
                   </button>
@@ -210,6 +223,24 @@
                 </div>
               </ul>
             </form>
+            <div>
+              <table id="tabla" class="table table-dark table-striped">
+                <thead class="table-dark">
+                  <tr class="table-dark">
+                    <th>Entrada</th>
+                    <th>Salida</th>
+                    <th>Noches</th>
+                    <th>Total</th>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </thead>
+              </table>
+            </div>
           </div>
         </div>
       </div>
