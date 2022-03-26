@@ -54,19 +54,30 @@ formulario.addEventListener("submit", (event) => {
   let precioPorNoche;
 
   switch (hotel) {
-    case "ecoland":
+    case "Ecoland":
       precioPorNoche = 3500;
 
       break;
-    case "hesperia":
+
+    case "Hesperia":
       precioPorNoche = 3300;
       break;
-    case "isla-caribe":
+
+    case "Isla-caribe":
       precioPorNoche = 3000;
       break;
+
     default:
       break;
   }
+
+  localStorage.setItem("Ecoland", JSON.stringify(3500));
+  localStorage.setItem("Hesperia", JSON.stringify(3300));
+  localStorage.setItem("Isla caribe", JSON.stringify(3000));
+  localStorage.setItem("Total", JSON.stringify(cont_dias));
+
+  // localStorage.setItem('precios' )
+
   // mientras la fecha de salida es igual o menor a la de entrada, entonces mandamos un mnj de error.
   if (checkout <= checkin || checkout === checkin) {
     mensaje.innerHTML =
@@ -75,6 +86,7 @@ formulario.addEventListener("submit", (event) => {
 
     return;
   }
+
   // con una funcion calculamos los dias que elije el usuario
   let cantidadDias = calcularCantidadDias(checkin, checkout);
 
@@ -90,13 +102,9 @@ formulario.addEventListener("submit", (event) => {
     cantidadDias,
     total
   );
-  console.log(Areservaer);
-  let baseDeDatos = [];
-  function agregar() {
-    console.log("capturado");
-  }
 
   aReservas.push(Reserva);
+
   Swal.fire(
     "Reserva exitosa",
     "Enviaremos un correo con el detalle!",
@@ -105,7 +113,16 @@ formulario.addEventListener("submit", (event) => {
   formulario.reset();
   mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
   mensaje.style.color = "green";
+  console.log(aReserva);
+  console.log(cantidadPersonas, cantidadDias, precioPorNoche);
+  agregar();
 });
+
+let baseDatos = [];
+function agregar() {
+  baseDatos.push(aReservas);
+  console.log(baseDatos);
+}
 
 function cerrar() {
   mensaje.innerHTML = "";
