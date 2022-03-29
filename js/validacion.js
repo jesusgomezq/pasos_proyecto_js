@@ -74,7 +74,7 @@ formulario.addEventListener("submit", (event) => {
   localStorage.setItem("Ecoland", JSON.stringify(3500));
   localStorage.setItem("Hesperia", JSON.stringify(3300));
   localStorage.setItem("Isla caribe", JSON.stringify(3000));
-  localStorage.setItem("Total", JSON.stringify(cont_dias));
+  localStorage.setItem("Total", "total");
 
   // localStorage.setItem('precios' )
 
@@ -110,17 +110,24 @@ formulario.addEventListener("submit", (event) => {
     "Enviaremos un correo con el detalle!",
     "success"
   );
+
   formulario.reset();
   mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
   mensaje.style.color = "green";
   console.log(aReserva);
-  console.log(cantidadPersonas, cantidadDias, precioPorNoche);
+  console.log(
+    "Cantidad de perosnas: " + cantidadPersonas,
+    "Cantidad de dias: " + cantidadDias,
+    "Precio por noche: " + precioPorNoche,
+    "Total:" + total
+  );
+
   agregar();
 });
 
 let baseDatos = [];
 function agregar() {
-  baseDatos.push(aReservas);
+  baseDatos.push(aReserva);
   console.log(baseDatos);
 }
 
