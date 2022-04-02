@@ -74,9 +74,6 @@ formulario.addEventListener("submit", (event) => {
   localStorage.setItem("Ecoland", JSON.stringify(3500));
   localStorage.setItem("Hesperia", JSON.stringify(3300));
   localStorage.setItem("Isla caribe", JSON.stringify(3000));
-  localStorage.setItem("Total", "total");
-
-  // localStorage.setItem('precios' )
 
   // mientras la fecha de salida es igual o menor a la de entrada, entonces mandamos un mnj de error.
   if (checkout <= checkin || checkout === checkin) {
@@ -105,16 +102,21 @@ formulario.addEventListener("submit", (event) => {
 
   aReservas.push(Reserva);
 
+  // ventana sweet-modal
   Swal.fire(
     "Reserva exitosa",
     "Enviaremos un correo con el detalle!",
     "success"
   );
 
+  // con este parametro reseteamos los campos del input
   formulario.reset();
+
   mensaje.innerHTML = "<p>Formulario enviado correctamente</p>";
   mensaje.style.color = "green";
+
   console.log(aReserva);
+
   console.log(
     "Cantidad de perosnas: " + cantidadPersonas,
     "Cantidad de dias: " + cantidadDias,
@@ -122,23 +124,56 @@ formulario.addEventListener("submit", (event) => {
     "Total:" + total
   );
 
+  // agregar corresponde a la base de datos
   agregar();
 });
 
 let baseDatos = [];
+
+// Funcion que nos devuelve la reserva completa del usuario
 function agregar() {
   baseDatos.push(aReserva);
   console.log(baseDatos);
 }
 
-function cerrar() {
-  mensaje.innerHTML = "";
-}
-
 // funcion hecha para mostrar diferencias entre la entrada y la salida
-
 function calcularCantidadDias(entrada, salida) {
   let dias_dif = salida.getTime() - entrada.getTime();
   let cont_dias = Math.round(dias_dif / (1000 * 60 * 60 * 24));
   return cont_dias;
+}
+
+// variables para el calculo de precios en moneda extrajera
+let moneda_1 = document.getElementById("pesos");
+let moneda_2 = document.getElementById("dolar");
+let monto_1 = document.getElementById("arg");
+let monto_2 = document.getElementById("usd");
+let precio = document.getElementById("taza");
+let cotizar = document.getElementById("cambio");
+
+// Fetch para hacer el calculo de las divisas
+function calcularPrecio() {
+  const moneda_uno = moneda_1.value;
+  const moneda_dos = moneda_2.value;
+
+  fetch(`https://api.exchangerate-api.com/v4/latest/${moneda_uno}`)
+    .then((res) => res.json())
+    .then((data) => {
+      const taza = data.rates[moneda_dos];
+      cotizar.innerText = `1 ${moneda_uno} = ${taza} ${moneda_dos}`;
+      monto_2.value = (monto_1.value * taza).toFixed(2);
+    });
+}
+
+calcularPrecio();
+
+// Eventos del calculo
+moneda_1.addEventListener("change", calcularPrecio);
+monto_1.addEventListener("input", calcularPrecio);
+moneda_2.addEventListener("change", calcularPrecio);
+monto_2.addEventListener("input", calcularPrecio);
+
+// cerrar nos permte borrar todo lo que haya en el formulario y empezar de cero
+function cerrar() {
+  mensaje.innerHTML = "";
 }

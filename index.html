@@ -198,15 +198,34 @@
                 </li>
 
                 <li>
-                  <label for="personas">Personas</label>
+                  <label for="personas"> Cantidad de Personas</label>
                   <input
                     type="number"
                     name=""
                     id="personas"
                     oninvalid="invalido()"
                     required
+                    min="0"
                   />
                 </li>
+                <li>
+                  <label for="arg">Pesos</label>
+                  <select name="" id="pesos">
+                    <option value="ARS">Arg</option>
+                  </select>
+                  <input type="number" id="arg"  />
+                </li>
+
+                <li>
+                  <label for="usd">Usd</label>
+                  <select name="" id="dolar">
+                    <option value="USD">Usd</option>
+                  </select>
+                  <input type="number" id="usd"  />
+                </li>
+                <button id="taza">Presupuestar</button>
+
+                <div id="cambio"></div>
 
                 <div class="modal-footer">
                   <button
